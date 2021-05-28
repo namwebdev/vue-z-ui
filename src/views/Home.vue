@@ -1,18 +1,24 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <Pagination :current-page="page" :total-pages="10" @change="onChange" />
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import { ref } from "vue";
+import Pagination from "@/components/Pagination/Index.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    Pagination,
+  },
+  setup() {
+    const page = ref(1);
+    function onChange(e) {
+      page.value = e;
+      console.log(e);
+    }
+
+    return { page, onChange };
   },
 };
 </script>
