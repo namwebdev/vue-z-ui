@@ -1,6 +1,7 @@
 <template>
-  <ul class="flex items-center">
+  <ul class="flex items-center" data-test="pager">
     <li
+      data-test="prev"
       class="pagination-btn"
       :class="{ disabled: currentPage === 1 }"
       @click="handleChangePage('prev')"
@@ -8,6 +9,7 @@
       <i class="fas fa-chevron-left"></i>
     </li>
     <li
+      data-test="page"
       class="pagination-btn"
       :class="{ active: currentPage === 1 }"
       @click="handleChangePage(1)"
@@ -18,6 +20,7 @@
     <li
       v-for="pager in pagers"
       :key="pager"
+      data-test="page"
       class="pagination-btn"
       :class="{ active: currentPage === pager }"
       @click="handleChangePage(pager)"
@@ -26,6 +29,7 @@
     </li>
     <li v-show="showNextMore"><i class="fas fa-ellipsis-h"></i></li>
     <li
+      data-test="page"
       class="pagination-btn"
       :class="{ active: currentPage === totalPages }"
       @click="handleChangePage(totalPages)"
@@ -33,6 +37,8 @@
       {{ totalPages }}
     </li>
     <li
+      v-if="totalPages > 1"
+      data-test="next"
       class="pagination-btn"
       :class="{ disabled: currentPage === totalPages }"
       @click="handleChangePage('next')"
@@ -82,7 +88,7 @@ export default {
         const offset = Math.floor(pagersCount / 2) - 1;
         for (let i = currentPage - offset; i <= currentPage + offset; i++)
           array.push(i);
-      } else for (let i = 0; i < totalPages; i++) array.push(i);
+      } else for (let i = 2; i < totalPages; i++) array.push(i);
 
       return array;
     });
