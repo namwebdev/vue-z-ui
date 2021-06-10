@@ -29,8 +29,14 @@
       multiple
       @input="handleSearch"
     />
-
     <span class="pl-4">{{ value }}</span>
+
+    <!--    Scrollbar-->
+    <Scrollbar height="150px">
+      <div v-for="item in dropdown" :key="item.id">
+        {{ item.text }}
+      </div>
+    </Scrollbar>
   </div>
 </template>
 
@@ -41,10 +47,12 @@ import Modal from "@/components/Modal/Index.vue";
 import Dropdown from "@/components/Dropdown/Index.vue";
 import DropdownItem from "@/components/Dropdown/Item.vue";
 import Select from "@/components/Select/Index.vue";
+import Scrollbar from "@/components/Scrollbar/Index.vue";
 
 export default {
   name: "Home",
   components: {
+    Scrollbar,
     Pagination,
     Modal,
     Dropdown,
