@@ -1,13 +1,7 @@
-<template>
-  <router-view />
-  <Notification />
-</template>
-
-<script>
-import Notification from "@/components/Notification/Index.vue";
-
-export default {
-  name: "App",
-  components: { Notification },
-};
+<script setup lang="ts">
+import CascaderDemo from "./components/Cascader/demo.vue";
 </script>
+
+<template>
+  <CascaderDemo />
+</template>

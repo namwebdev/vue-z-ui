@@ -1,0 +1,43 @@
+<template>
+  <div v-on-click-outside="close">
+    <input type="text" @click="show = true" />
+
+    <div class="flex" v-show="show">
+      <Container v-for="(menu, index) in menus" :key="index" :menu="menu">
+      </Container>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { vOnClickOutside } from "@vueuse/components";
+import { ref, watch } from "vue";
+import Container from "./Container.vue";
+import { Menu } from "./types";
+import useCascader from "./useCascader";
+
+const props = defineProps<{ options: Menu[]; modelValue: number[] }>();
+const emit = defineEmits(["update:modelValue"]);
+
+const { initData, menus, selectedIds } = useCascader();
+initData(props.options, props.modelValue);
+
+const show = ref<boolean>(false);
+
+watch(selectedIds, (val) => {
+  emit("update:modelValue", val);
+});
+
+function close() {
+  show.value = false;
+}
+</script>
+
+<script lang="ts">
+export default {
+  name: "Cascader",
+  inheritAttrs: false,
+};
+</script>
+
+<style scoped></style>
