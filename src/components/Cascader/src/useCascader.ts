@@ -35,7 +35,10 @@ const useCascader = () => {
     selectedIds.value = selectedIds.value.slice(0, levelSelected - 1);
     selectedIds.value.push(id);
 
-    if (!newMenu?.length || !_menus.length) return;
+    if (!newMenu?.length) {
+      menus.value = _menus.slice(0, levelSelected);
+      return;
+    }
 
     if (levelSelected > levelLatest) return;
 

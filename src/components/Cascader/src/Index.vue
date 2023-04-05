@@ -2,10 +2,12 @@
   <div v-on-click-outside="close">
     <input type="text" @click="show = true" />
 
-    <div class="flex" v-show="show">
-      <Container v-for="(menu, index) in menus" :key="index" :menu="menu">
-      </Container>
-    </div>
+    <transition name="slide-down">
+      <transition-group tag="div" name="list" v-show="show" class="list flex">
+        <Container v-for="(menu, index) in menus" :key="index" :menu="menu">
+        </Container>
+      </transition-group>
+    </transition>
   </div>
 </template>
 
