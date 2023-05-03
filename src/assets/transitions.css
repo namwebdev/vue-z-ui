@@ -1,3 +1,16 @@
+/* fade */
+.fade.enter-from,
+.fade-leave-to {
+  @apply opacity-0;
+}
+.fade-enter-to,
+.fade-leave-from {
+  @apply opacity-100;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.2s;
+}
 /* slide down */
 .slide-down-enter-from,
 .slide-down-leave-to {

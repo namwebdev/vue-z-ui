@@ -1,5 +1,5 @@
 <template>
-  <div v-on-click-outside="close">
+  <div v-click-outside="close">
     <input type="text" @click="show = true" />
 
     <transition name="slide-down">
