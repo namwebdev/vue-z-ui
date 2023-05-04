@@ -3,6 +3,7 @@ import { ref } from "vue";
 import CascaderDemo from "./components/Cascader/demo.vue";
 import MessageBox from "./components/MessageBox/src";
 import testCom from "./components/test/test.vue";
+import DemoVirtualList from "./components/VirtualList/Demo.vue";
 
 const show = ref(false);
 
@@ -33,5 +34,7 @@ function showMessageBox() {
     <span>Data</span>
   </div> -->
   <button @click="showMessageBox">Click</button>
+  <br />
+  <DemoVirtualList />
   <!-- <button @click="hanldeClick">Click</button> -->
 </template>
