@@ -22,9 +22,9 @@ function showMessageBox() {
     },
   });
 }
-// function hanldeClick() {
-//   MessageBox.openDialog(testCom).then((res) => console.error(res));
-// }
+function hanldeClick() {
+  MessageBox.openDialog(testCom).then((res) => console.error(res));
+}
 </script>
 
 <template>
@@ -35,6 +35,6 @@ function showMessageBox() {
   </div> -->
   <button @click="showMessageBox">Click</button>
   <br />
-  <DemoVirtualList />
-  <!-- <button @click="hanldeClick">Click</button> -->
+  <!-- <DemoVirtualList /> -->
+  <button @click="hanldeClick">Click</button>
 </template>

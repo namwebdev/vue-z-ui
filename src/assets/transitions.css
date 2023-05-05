@@ -11,6 +11,7 @@
 .fade-leave-active {
   transition: all 0.2s;
 }
+
 /* slide down */
 .slide-down-enter-from,
 .slide-down-leave-to {

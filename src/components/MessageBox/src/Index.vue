@@ -8,11 +8,7 @@
     leave-to-class="opacity-0"
     @after-leave="$emit('vanish')"
   >
-    <div
-      v-show="visible"
-      class="fixed z-10 inset-0 overflow-hidden bg-black bg-opacity-50"
-      @click="onClickOnMask"
-    >
+    <div v-show="visible" class="overlay" @click="onClickOnMask">
       <div
         role="dialog"
         aria-modal="true"

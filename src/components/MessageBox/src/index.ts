@@ -6,6 +6,7 @@ import {
   render,
 } from "vue";
 import MessageBoxComponent from "./Index.vue";
+import DialogComponent from "./Dialog.vue";
 import { Action, MessageBoxOptions, MessageBoxState } from "./types";
 
 const getContainer = () => document.body;
@@ -14,8 +15,14 @@ const initInstance = (
   props?: any,
   _component?: VNodeTypes
 ): ComponentInternalInstance => {
-  const component = _component ?? MessageBoxComponent;
-  const vNode = createVNode(component, props);
+  let vNode;
+  if (_component)
+    vNode = createVNode(
+      DialogComponent,
+      {},
+      { default: () => [createVNode(_component, props)] }
+    );
+  else vNode = createVNode(MessageBoxComponent, props);
   render(vNode, getContainer());
 
   return vNode.component as ComponentInternalInstance;
@@ -56,7 +63,13 @@ function openDialog(component: VNodeTypes) {
   const options: any = {};
   options.onVanish = () => render(null, getContainer());
 
-  initInstance(options, component);
+  const instance = initInstance(options, component);
+
+  const vm = instance.proxy as ComponentPublicInstance<{
+    visible: boolean;
+  }>;
+
+  vm.visible = true;
 
   return new Promise((resolve, reject) => {
     options.onAction = (action: Action) => {
