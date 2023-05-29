@@ -56,4 +56,11 @@ const loadMore = () => {
 useInfiniteScroll(containerProps.ref, loadMore);
 </script>
 
+<script lang="ts">
+export default {
+  name: "DemoVirtualList",
+  inheritAttrs: false,
+};
+</script>
+
 <style scoped></style>

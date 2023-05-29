@@ -54,7 +54,7 @@ function show(
 
   vm.visible = true;
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     options.onAction = (action: Action) => resolve(action);
   });
 }
@@ -71,7 +71,7 @@ function openDialog(component: VNodeTypes) {
 
   vm.visible = true;
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     options.onAction = (action: Action) => {
       render(null, getContainer());
       resolve(action);

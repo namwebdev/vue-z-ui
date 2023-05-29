@@ -1,16 +1,15 @@
 export interface MessageBoxState {
   title: string;
   message: string;
-  iconClass: IconClass;
+  iconClass: string;
   boxLoading: boolean;
   confirmButtonLoading: boolean;
   onConfirm: (state: MessageBoxState, done: () => void) => void;
 }
 
 export interface MessageBoxOptions {
-  iconClass?: IconClass;
+  iconClass?: string;
   onConfirm?: (state: MessageBoxState, done: () => void) => void;
 }
 
-export type IconClass = "fas fa-trash";
 export type Action = "confirm" | "close";

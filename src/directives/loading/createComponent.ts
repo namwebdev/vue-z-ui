@@ -36,7 +36,7 @@ export function createLoadingComponent(target: ElementLoading) {
                 { class: "absolute inset-0 bg-white opacity-90" },
                 [
                   h("div", { class: "opacity-50" }),
-                  h("div", { class: "spinner" }, [spinner]),
+                  h("i", { class: "fal fa-spinner-third fa-spin fa-lg" }),
                 ]
               ),
             ]),

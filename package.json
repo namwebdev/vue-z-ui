@@ -9,9 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vueuse/components": "^9.13.0",
     "@vueuse/core": "^9.13.0",
-    "vue": "^3.2.47"
+    "tippy.js": "^6.3.7",
+    "vee-validate": "^4.9.2",
+    "vue": "3.3.4",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.192",

@@ -38,7 +38,7 @@
 
 <script lang="ts">
 import { ref, defineComponent, reactive } from "vue";
-import { Action, IconClass } from "./types";
+import { Action } from "./types";
 import { MessageBoxState } from "./types";
 import Loading from "../../../directives/loading/loading";
 
@@ -50,7 +50,7 @@ export default defineComponent({
     const state = reactive<MessageBoxState>({
       title: "",
       message: "",
-      iconClass: "" as unknown as IconClass,
+      iconClass: "",
       boxLoading: false,
       confirmButtonLoading: false,
       onConfirm: () => {},
