@@ -13,15 +13,16 @@ const getContainer = () => document.body;
 
 const initInstance = (
   props?: any,
-  _component?: VNodeTypes
+  component?: VNodeTypes
 ): ComponentInternalInstance => {
   let vNode;
-  if (_component)
-    vNode = createVNode(
-      DialogComponent,
-      {},
-      { default: () => [createVNode(_component, props)] }
-    );
+  if (component) {
+    const dialogProps: any = {};
+    dialogProps.onVanish = () => render(null, getContainer());
+    vNode = createVNode(DialogComponent, dialogProps, {
+      default: () => [createVNode(component, props)],
+    });
+  } //
   else vNode = createVNode(MessageBoxComponent, props);
   render(vNode, getContainer());
 
@@ -61,8 +62,6 @@ function show(
 
 function openDialog(component: VNodeTypes) {
   const options: any = {};
-  options.onVanish = () => render(null, getContainer());
-
   const instance = initInstance(options, component);
 
   const vm = instance.proxy as ComponentPublicInstance<{
@@ -73,7 +72,7 @@ function openDialog(component: VNodeTypes) {
 
   return new Promise((resolve) => {
     options.onAction = (action: Action) => {
-      render(null, getContainer());
+      vm.visible = false;
       resolve(action);
     };
   });
