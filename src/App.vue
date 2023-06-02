@@ -11,9 +11,11 @@
       <br />
       <DemoVirtualList />
       <Icon :icon="['s', 'trash']" size="xs" class="text-blue-500" /> -->
-      <button @click="showMessageBox">Click</button>
+      <!-- <button @click="hanldeClick">Click</button> -->
     </div>
-    <Form />
+    <!-- <Form /> -->
+
+    <UploadDemo />
   </section>
 </template>
 
@@ -26,6 +28,7 @@ import testCom from "./components/test/test.vue";
 import DemoVirtualList from "./components/VirtualList/Demo.vue";
 import Icon from "./components/Icon/Index.vue";
 import Form from "./components/test/form.vue";
+import UploadDemo from "./components/UploadImage/Demo.vue";
 
 const show = ref(false);
 

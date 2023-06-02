@@ -12,7 +12,6 @@
 </template>
 
 <script setup lang="ts">
-import { vOnClickOutside } from "@vueuse/components";
 import { ref, watch } from "vue";
 import Container from "./Container.vue";
 import { Menu } from "./types";
