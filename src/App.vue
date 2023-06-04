@@ -12,16 +12,21 @@
       <DemoVirtualList />
       <Icon :icon="['s', 'trash']" size="xs" class="text-blue-500" /> -->
       <!-- <button @click="hanldeClick">Click</button> -->
+      <!-- <UploadDemo /> -->
+      <!-- <Form /> -->
+      <DemoNotification />
     </div>
-    <!-- <Form /> -->
-
-    <UploadDemo />
   </section>
+
+  <Notification />
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
+// App component
 import Sidebar from "./components/Sidebar/src/Index.vue";
+import Notification from "./components/Notification/src/Index.vue";
+//
 import CascaderDemo from "./components/Cascader/demo.vue";
 import MessageBox from "./components/MessageBox/src";
 import testCom from "./components/test/test.vue";
@@ -29,6 +34,7 @@ import DemoVirtualList from "./components/VirtualList/Demo.vue";
 import Icon from "./components/Icon/Index.vue";
 import Form from "./components/test/form.vue";
 import UploadDemo from "./components/UploadImage/Demo.vue";
+import DemoNotification from "./components/Notification/Demo.vue";
 
 const show = ref(false);
 
