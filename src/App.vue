@@ -14,7 +14,8 @@
       <!-- <button @click="hanldeClick">Click</button> -->
       <!-- <UploadDemo /> -->
       <!-- <Form /> -->
-      <DemoNotification />
+      <!-- <DemoNotification /> -->
+      <DemoImage />
     </div>
   </section>
 
@@ -35,6 +36,7 @@ import Icon from "./components/Icon/Index.vue";
 import Form from "./components/test/form.vue";
 import UploadDemo from "./components/UploadImage/Demo.vue";
 import DemoNotification from "./components/Notification/Demo.vue";
+import DemoImage from "./components/Image/Demo.vue";
 
 const show = ref(false);
 

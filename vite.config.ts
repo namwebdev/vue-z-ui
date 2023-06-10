@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import dotenv from "dotenv";
+import { resolve } from "path";
 
 dotenv.config();
 
@@ -11,5 +12,11 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     port: PORT,
+  },
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+      // Add more aliases as needed
+    },
   },
 });
