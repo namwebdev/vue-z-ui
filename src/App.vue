@@ -1,7 +1,8 @@
 <template>
   <section class="flex">
     <Sidebar />
-    <div id="content" class="ml-44">
+    <div id="content" class="ml-44 mt-10">
+      <div v-clipboard:success="hanldeClick"><span>2</span></div>
       <!-- <CascaderDemo /> -- -->
       <!-- <button @click="toggleShow">Click</button>
   <div v-loading="show">
@@ -15,7 +16,7 @@
       <!-- <UploadDemo /> -->
       <!-- <Form /> -->
       <!-- <DemoNotification /> -->
-      <DemoImage />
+      <!-- <DemoImage /> -->
     </div>
   </section>
 
