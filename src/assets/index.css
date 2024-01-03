@@ -5,16 +5,22 @@
 
 /* loading directive */
 .spinner {
-  width: 20px;
+  width: 18px;
+  padding: 3px;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 3px solid;
-  border-color: #4d1eb8 #0000;
-  animation: spinner 1s infinite;
+  background: #374ab2;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: spin 1s infinite linear;
+  display: inline-flex;
 }
-@keyframes spinner {
+@keyframes spin {
   to {
-    transform: rotate(0.5turn);
+    transform: rotate(1turn);
   }
 }
 /* ----- */
