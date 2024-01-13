@@ -1,13 +1,15 @@
 <template>
   <section class="flex">
     <Sidebar />
-    <div id="content" class="ml-44 mt-10">
-      <div v-clipboard:success="hanldeClick"><span>2</span></div>
+    <div id="content" class="ml-44 mt-10 w-full h-full">
+      <div v-clipboard:success="hanldeClick"><span>Clipboard</span></div>
+      <!-- <DemoLoader /> -->
+      <DemoCalendar />
       <!-- <CascaderDemo /> -- -->
-      <!-- <button @click="toggleShow">Click</button>
-  <div v-loading="show">
-    <span>Data</span>
-  </div> -->
+      <!-- <button @click="show = !show">Click me</button>
+      <div v-loading="show">
+        <span>Data</span>
+      </div> -->
       <!-- <button @click="showMessageBox">Click</button>
       <br />
       <DemoVirtualList />
@@ -38,6 +40,9 @@ import Form from "./components/test/form.vue";
 import UploadDemo from "./components/UploadImage/Demo.vue";
 import DemoNotification from "./components/Notification/Demo.vue";
 import DemoImage from "./components/Image/Demo.vue";
+import DemoButton from "./components/Button/Demo.vue";
+import DemoLoader from "./components/Loader/Demo.vue";
+import DemoCalendar from "./components/Calendar/Demo.vue";
 
 const show = ref(false);
 
