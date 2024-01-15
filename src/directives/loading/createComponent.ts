@@ -15,13 +15,8 @@ export function createLoadingComponent(target: ElementLoading) {
   const loadingComponent = defineComponent({
     name: "ZLoading",
     setup() {
-      return () => {
-        const spinner = h("div", {
-          class: "z-loading",
-          title: "Loading",
-        });
-
-        return h(
+      return () =>
+        h(
           Transition,
           {
             name: "fade",
@@ -33,16 +28,15 @@ export function createLoadingComponent(target: ElementLoading) {
             default: withCtx(() => [
               createVNode(
                 "div",
-                { class: "absolute inset-0 bg-white opacity-90" },
-                [
-                  h("div", { class: "opacity-50" }),
-                  h("i", { class: "fal fa-spinner-third fa-spin fa-lg" }),
-                ]
+                {
+                  class:
+                    "absolute inset-0 bg-white opacity-90 flex justify-center items-center",
+                },
+                [h("div", { class: "" }, [h("div", { class: "spinner" })])]
               ),
             ]),
           }
         );
-      };
     },
   });
 

@@ -11,10 +11,11 @@
   "dependencies": {
     "@vueuse/core": "^9.13.0",
     "class-variance-authority": "^0.7.0",
+    "dayjs": "^1.11.10",
     "tailwind-merge": "^2.2.0",
     "tippy.js": "^6.3.7",
     "vee-validate": "^4.9.2",
-    "vue": "3.3.4",
+    "vue": "3.4.5",
     "yup": "^1.1.1"
   },
   "devDependencies": {

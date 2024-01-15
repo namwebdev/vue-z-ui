@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  height: 100lvh;
+}
+
 /* loading directive */
 .spinner {
   width: 18px;

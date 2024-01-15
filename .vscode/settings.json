@@ -1,4 +1,5 @@
 {
   "editor.formatOnSave": true,
-  "cSpell.words": ["Cascader", "Lastest", "vueuse"]
+  "cSpell.words": ["Cascader", "Lastest", "vueuse"],
+  "vue3snippets.enable-compile-vue-file-on-did-save-code": true
 }

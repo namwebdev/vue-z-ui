@@ -1,6 +1,6 @@
 <template>
   <div class="w-60">
-    <!-- <DatePicker v-model="date" as-single> </DatePicker> -->
+    <DatePicker></DatePicker>
     <DPicker v-model="date" class="mt-10" />
   </div>
 </template>
